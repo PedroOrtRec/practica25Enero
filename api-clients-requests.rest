@@ -17,3 +17,20 @@ Content-Type: application/json
     "email": "marCam@mail.com",
     "dni": "34129091"
 }
+
+###
+PUT http://localhost:3000/api/clients/13
+Content-Type: application/json
+
+{
+   "name": "Daniel",
+    "surname": "Pozo",
+    "address": "Rodrigo 5",
+    "phone": "755190162",
+    "birthdate": "1999-09-12",
+    "email": "danPoz@mail.com",
+    "dni": "33897456"
+}
+
+###
+DELETE http://localhost:3000/api/clients/3

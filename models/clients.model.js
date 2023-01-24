@@ -12,6 +12,16 @@ const createClient = ({ name, surname, address, phone, birthdate, email, dni }) 
     );
 }
 
+const updateClient = (clientId, { name, surname, address, phone, birthdate, email, dni }) => {
+    return db.query(
+        'UPDATE clients set name = ?, surname = ?, address = ?, phone = ?, birthdate = ?, email = ?, dni = ? WHERE idClient = ?', [name, surname, address, phone, birthdate, email, dni, clientId]
+    )
+}
+
+const deleteClient = (clientId) => {
+    return db.query('DELETE FROM clients where idClient = ?', [clientId])
+}
+
 module.exports = {
-    getAll, getById, createClient
+    getAll, getById, createClient, updateClient, deleteClient
 }

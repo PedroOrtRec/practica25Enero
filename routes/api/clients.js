@@ -1,4 +1,4 @@
-const { getAll, getById, createClient } = require('../../models/clients.model');
+const { getAll, getById, createClient, updateClient, deleteClient } = require('../../models/clients.model');
 
 const router = require('express').Router();
 
@@ -36,5 +36,30 @@ router.post('/', async (req, res) => {
         res.json({ fatal: error.message })
     }
 });
+
+router.put('/:clientId', async (req, res) => {
+    const { clientId } = req.params;
+
+    try {
+        const [result] = await updateClient(clientId, req.body);
+
+        const [client] = await getById(clientId);
+
+        res.json(client[0]);
+    } catch (error) {
+        res.json({ fatal: error.message })
+    }
+});
+
+router.delete(':clientId', async (req, res) => {
+    const { clientId } = req.params;
+
+    try {
+        const [result] = await deleteClient(clientId);
+        res.json({ message: 'Cliente borrado' });
+    } catch (error) {
+        res.json({ fatal: error.message })
+    }
+})
 
 module.exports = router;
