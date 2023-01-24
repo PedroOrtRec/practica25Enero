@@ -1,10 +1,10 @@
-const { getAll, getById, createClient, updateClient, deleteClient } = require('../../models/clients.model');
+const { getAllClients, getClientById, createClient, updateClient, deleteClient } = require('../../models/clients.model');
 
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
     try {
-        const [clients] = await getAll();
+        const [clients] = await getAllClients();
         res.json(clients);
     } catch (error) {
         res.json({ fatal: error.message });
@@ -15,10 +15,10 @@ router.get('/:clientId', async (req, res) => {
     const { clientId } = req.params;
 
     try {
-        const [client] = await getById(clientId);
+        const [client] = await getClientById(clientId);
         if (client.length === 0) {
             res.json({
-                fatal: 'No existe el cliente'
+                fatal: 'El cliente no existe'
             });
         }
         res.json(client[0]);
@@ -30,7 +30,7 @@ router.get('/:clientId', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const [result] = await createClient(req.body);
-        const [client] = await getById(result.insertId);
+        const [client] = await getClientById(result.insertId);
         res.json(client[0]);
     } catch (error) {
         res.json({ fatal: error.message })
@@ -43,7 +43,7 @@ router.put('/:clientId', async (req, res) => {
     try {
         const [result] = await updateClient(clientId, req.body);
 
-        const [client] = await getById(clientId);
+        const [client] = await getClientById(clientId);
 
         res.json(client[0]);
     } catch (error) {
@@ -60,6 +60,6 @@ router.delete(':clientId', async (req, res) => {
     } catch (error) {
         res.json({ fatal: error.message })
     }
-})
+});
 
 module.exports = router;

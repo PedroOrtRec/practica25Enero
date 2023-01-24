@@ -1,0 +1,34 @@
+###
+GET http://localhost:3000/api/hotels
+
+###
+GET http://localhost:3000/api/hotels/2
+
+###
+POST http://localhost:3000/api/hotels
+Content-Type: application/json
+
+{
+ "name": "EnPalma",
+  "address": "Verbena 7",
+  "city": "Palma",
+  "star": "2",
+  "description": "Hotel en el centro de la diversión",
+  "taxe": "300.00"
+}
+
+###
+PUT http://localhost:3000/api/hotels/3
+Content-Type: application/json
+
+{
+ "name": "AltosVuelos",
+    "address": "Primavera 40",
+    "city": "Madrid",
+    "star": 1,
+    "description": "Hotel moderno",
+    "taxe": "100.00"
+}
+
+###
+DELETE http://localhost:3000/api/hotels/7
