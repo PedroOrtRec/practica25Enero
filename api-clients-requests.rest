@@ -1,0 +1,19 @@
+###
+GET http://localhost:3000/api/clients
+
+###
+GET http://localhost:3000/api/clients/2
+
+###
+POST http://localhost:3000/api/clients
+Content-Type: application/json
+
+{
+    "name": "María",
+    "surname": "Camacho",
+    "address": "Bota 89",
+    "phone": "669323210",
+    "birthdate": "1997-10-7",
+    "email": "marCam@mail.com",
+    "dni": "34129091"
+}
