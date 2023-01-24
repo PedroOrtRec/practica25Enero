@@ -9,7 +9,7 @@ const debug = require('debug')('practica25enero:server');
 const http = require('http');
 
 require('dotenv').config();
-require('../config/db.js');
+require('../config/db');
 
 /**
  * Get port from environment and store in Express.
