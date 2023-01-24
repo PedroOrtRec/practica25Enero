@@ -27,8 +27,8 @@ Content-Type: application/json
     "city": "Madrid",
     "star": 1,
     "description": "Hotel moderno",
-    "taxe": "100.00"
+    "taxe": "150.00"
 }
 
 ###
-DELETE http://localhost:3000/api/hotels/7
+DELETE http://localhost:3000/api/hotels/8

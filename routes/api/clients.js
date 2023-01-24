@@ -51,9 +51,8 @@ router.put('/:clientId', async (req, res) => {
     }
 });
 
-router.delete(':clientId', async (req, res) => {
+router.delete('/:clientId', async (req, res) => {
     const { clientId } = req.params;
-
     try {
         const [result] = await deleteClient(clientId);
         res.json({ message: 'Cliente borrado' });

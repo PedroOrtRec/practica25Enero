@@ -18,7 +18,8 @@ const updateHotel = (hotelId, { name, address, city, star, description, taxe }) 
 }
 
 const deleteHotel = (hotelId) => {
-    return bd.query('DELETE FROM hotels WHERE idhotel = ?', [hotelId])
+    return db.query('DELETE FROM hotels WHERE idhotel = ?', [hotelId])
 }
+
 
 module.exports = { getAllHotels, getHotelById, createHotel, updateHotel, deleteHotel }
