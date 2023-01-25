@@ -1,2 +1,32 @@
 ###
 GET http://localhost:3000/api/trips
+
+###
+GET http://localhost:3000/api/trips/2
+
+###
+POST http://localhost:3000/api/trips
+Content-Type: application/json
+
+{
+    "departureDate": "2023-02-14",
+    "arrivalDate": "2023-02-26",
+    "idDepartureFlight": "VLC4342",
+    "idArrivalFlight": "MAD9912",
+    "idHotel": "6"
+}
+
+###
+PUT http://localhost:3000/api/trips/3
+Content-Type: application/json
+
+{
+    "departureDate": "2023-03-31",
+    "arrivalDate": "2023-04-23",
+    "idDepartureFlight": "LCG7724",
+    "idArrivalFlight": "MAD8112",
+    "idHotel": "4"
+}
+
+###
+DELETE http://localhost:3000/api/trips/9
