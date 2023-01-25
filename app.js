@@ -9,6 +9,7 @@ const cors = require('cors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiRouter = require('./routes/api');
+const areaRouter = require('./routes/area');
 
 const app = express();
 
@@ -22,5 +23,6 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
+app.use('/clientsarea', areaRouter);
 
 module.exports = app;

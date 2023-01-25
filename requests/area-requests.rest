@@ -1,0 +1,14 @@
+###
+GET http://localhost:3000/clientsarea/trips
+
+###
+GET http://localhost:3000/clientsarea/trips/departureDate/2023-03-13
+
+###
+GET http://localhost:3000/clientsarea/hotels
+
+###
+GET http://localhost:3000/clientsarea/hotels/AlaPlaya
+
+###
+POST http://localhost:3000/clientsarea/add/1/1

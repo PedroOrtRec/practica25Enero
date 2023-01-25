@@ -6,6 +6,10 @@ const getTripById = (tripId) => {
     return db.query('SELECT * FROM trips WHERE idtrip = ?', [tripId])
 }
 
+const getTripByDepartureDate = (departureDate) => {
+    return db.query('SELECT * FROM trips WHERE departureDate = ?', [departureDate])
+}
+
 const createTrip = ({ departureDate, arrivalDate, idDepartureFlight, idArrivalFlight, idHotel }) => {
     return db.query(
         'INSERT INTO trips (departureDate, arrivalDate, idDepartureFlight, idArrivalFlight, idHotel) VALUES (?, ?, ?, ?, ?)', [departureDate, arrivalDate, idDepartureFlight, idArrivalFlight, idHotel])
@@ -19,4 +23,4 @@ const deleteTrip = (tripId) => {
     return db.query('DELETE FROM trips WHERE idtrip = ?', [tripId])
 }
 
-module.exports = { getAllTrips, getTripById, createTrip, updateTrip, deleteTrip }
+module.exports = { getAllTrips, getTripById, createTrip, updateTrip, deleteTrip, getTripByDepartureDate }

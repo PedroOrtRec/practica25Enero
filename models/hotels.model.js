@@ -6,6 +6,10 @@ const getHotelById = (hotelId) => {
     return db.query('SELECT * FROM hotels WHERE idhotel = ?', [hotelId])
 }
 
+const getHotelByName = (hotelName) => {
+    return db.query('SELECT * FROM hotels WHERE name = ?', [hotelName])
+}
+
 const createHotel = ({ name, address, city, star, description, taxe }) => {
     return db.query(
         'INSERT INTO hotels (name, address, city, star, description, taxe) VALUES (?, ?, ?, ?, ?, ?)', [name, address, city, star, description, taxe])
@@ -22,4 +26,4 @@ const deleteHotel = (hotelId) => {
 }
 
 
-module.exports = { getAllHotels, getHotelById, createHotel, updateHotel, deleteHotel }
+module.exports = { getAllHotels, getHotelById, createHotel, updateHotel, deleteHotel, getHotelByName }
